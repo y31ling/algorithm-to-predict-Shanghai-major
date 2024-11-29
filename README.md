@@ -9,15 +9,21 @@
 =
 
 那么作为一道数学题，首先第一步我们就要简化模型。对于大部分队伍来说我们其实并不能知道他们到底有多强。但是一场比赛说白了只有以下五种情况:
+
 ![image](https://github.com/user-attachments/assets/c06c9817-ef27-4406-9c2b-2135c038e562)
+
 再细的分类都没有意义，这五种情况已经涵盖了所有情况。
 
 现在我们可以取一个处于比赛中位实力的队伍，再取一个最强的队伍，再取一个最弱的队伍，中位队伍打最强的队伍会被碾压，打最弱的队伍会碾压对方。
 以下是我的个人判断:
-T1 MGLZ, VP \n
-T2 CPLX, LIQ  \n
-T3  C9,MIBR,PAIN  \n
-T4 GL, FNC, PUA, BIG, WC,FUR  \n
-T5 RA, FQ, IMP  \n
+T1 MGLZ, VP 
+
+T2 CPLX, LIQ 
+
+T3  C9,MIBR,PAIN  
+
+T4 GL, FNC, PUA, BIG, WC,FUR  
+
+T5 RA, FQ, IMP  
 
 你可以在team.json中自由更改你的判断，只需要更改其中battlevalue的数据即可(T1 =1000, T2=950, T3=900,T4=850,T5=800)
