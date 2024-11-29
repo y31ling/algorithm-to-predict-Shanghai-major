@@ -130,7 +130,7 @@ def run_tournament():
         
 
 # Simulate 10 tournaments
-simulate_time = 10000000
+simulate_time = 1000000
 for _ in range(simulate_time):
     reset_teams()
     run_tournament()
