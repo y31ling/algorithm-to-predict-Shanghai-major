@@ -14,10 +14,10 @@
 
 现在我们可以取一个处于比赛中位实力的队伍，再取一个最强的队伍，再取一个最弱的队伍，中位队伍打最强的队伍会被碾压，打最弱的队伍会碾压对方。
 以下是我的个人判断:
-T1 MGLZ, VP
-T2 CPLX, LIQ
-T3  C9,MIBR,PAIN
-T4 GL, FNC, PUA, BIG, WC,FUR
-T5 RA, FQ, IMP
+T1 MGLZ, VP \n
+T2 CPLX, LIQ  \n
+T3  C9,MIBR,PAIN  \n
+T4 GL, FNC, PUA, BIG, WC,FUR  \n
+T5 RA, FQ, IMP  \n
 
 你可以在team.json中自由更改你的判断，只需要更改其中battlevalue的数据即可(T1 =1000, T2=950, T3=900,T4=850,T5=800)
