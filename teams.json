@@ -1,8 +1,8 @@
 {
     "team_1": {
-        "name": "Furia",
+        "name": "G2",
         "seed": 1,
-        "battle_value": 900,  
+        "battle_value": 1000,  
         "_comment": "115+117+98+99+96",
         "random_factor": 0.15,
         "opponents": [],
@@ -10,10 +10,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_7": {
-        "name": "The MongolZ",
-        "seed": 7,
-        "battle_value": 975,
+    "team_2": {
+        "name": "navi",
+        "seed": 2,
+        "battle_value": 1000,
         "_comment": "112+104+109+104+115",
         "random_factor": 0.15,
         "opponents": [],
@@ -21,10 +21,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_2": {
-        "name": "Virtus.pro",
-        "seed": 2,
-        "battle_value": 975,
+    "team_3": {
+        "name": "Vit",
+        "seed": 3,
+        "battle_value": 1000,
         "_comment": "106+112+112+100+104)*1.01",
         "random_factor": 0.15,
         "opponents": [],
@@ -32,9 +32,9 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_3": {
-        "name": "Liquid",
-        "seed": 3,
+    "team_4": {
+        "name": "spirit",
+        "seed": 4,
         "battle_value": 950,
         "_comment": "113+104+116+101+109",
         "random_factor": 0.15,
@@ -43,10 +43,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_4": {
-        "name": "Complexity",
-        "seed": 4,
-        "battle_value": 950,
+    "team_5": {
+        "name": "mouz",
+        "seed": 5,
+        "battle_value": 900,
         "_comment": "104+108+94+108+120",
         "random_factor": 0.15,
         "opponents": [],
@@ -54,10 +54,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_8": {
-        "name": "paiN",
-        "seed": 8,
-        "battle_value": 900,
+    "team_6": {
+        "name": "faze",
+        "seed": 6,
+        "battle_value": 950,
         "_comment": "112+104+114+111+102）*0.97",
         "random_factor": 0.15,
         "opponents": [],
@@ -65,10 +65,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_5": {
-        "name": "BIG",
-        "seed": 5,
-        "battle_value": 850,
+    "team_7": {
+        "name": "heroic",
+        "seed": 7,
+        "battle_value": 900,
         "_comment": "110+109+108+100+99",
         "random_factor": 0.15,
         "opponents": [],
@@ -76,9 +76,9 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_10": {
-        "name": "MIBR",
-        "seed": 10,
+    "team_8": {
+        "name": "3dmax",
+        "seed": 8,
         "battle_value": 900,
         "_comment": "109+118+102+109+98",
         "random_factor": 0.15,
@@ -87,10 +87,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_12": {
-        "name": "FlyQuest",
-        "seed": 12,
-        "battle_value": 800,
+    "team_9": {
+        "name": "mongolz",
+        "seed": 9,
+        "battle_value": 900,
         "_comment": "101+106+121+106+110）*0.95",
         "random_factor": 0.15,
         "opponents": [],
@@ -98,10 +98,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_9": {
-        "name": "GamerLegion",
-        "seed": 9,
-        "battle_value": 850,
+    "team_10": {
+        "name": "liquid",
+        "seed": 10,
+        "battle_value": 900,
         "_comment": "106+112+112+100+104)*0.98,没跟前20打过，打前30都面露菜色",
         "random_factor": 0.15,
         "opponents": [],
@@ -109,20 +109,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_14": {
-        "name": "Wildcard",
-        "seed": 14,
-        "battle_value": 850,
-        "_comment": "98+109+107+95+106",
-        "random_factor": 0.15,
-        "opponents": [],
-        "win_count": 0,
-        "lose_count": 0,
-        "swiss_score": 0
-    },
-    "team_16": {
-        "name": "Imperial",
-        "seed": 16,
+ 
+    "team_11": {
+        "name": "GamerLeigion",
+        "seed": 11,
         "battle_value": 850,
         "_comment": "106+112+112+100+104）*0.98",
         "random_factor": 0.15,
@@ -131,9 +121,9 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_13": {
-        "name": "Passion UA",
-        "seed": 13,
+    "team_12": {
+        "name": "Furia",
+        "seed": 12,
         "battle_value": 850,
         "_comment": "102+113+108+110+113)*0.96",
         "random_factor": 0.2,
@@ -142,9 +132,9 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_6": {
-        "name": "fnatic",
-        "seed": 6,
+    "team_13": {
+        "name": "pain",
+        "seed": 13,
         "battle_value": 850,
         "_comment": "104+99+110+121+98 )121*0.9=109,大壮数据失真",
         "random_factor": 0.15,
@@ -153,10 +143,10 @@
         "lose_count": 0,
         "swiss_score": 0
     },
-    "team_11": {
-        "name": "Cloud9",
-        "seed": 11,
-        "battle_value": 900,
+    "team_14": {
+        "name": "wildcard",
+        "seed": 14,
+        "battle_value": 850,
         "_comment": "113+99+117+112+91",
         "random_factor": 0.15,
         "opponents": [],
@@ -165,11 +155,22 @@
         "swiss_score": 0
     },
     "team_15": {
-        "name": "Rare Atom",
+        "name": "big",
         "seed": 15,
-        "battle_value": 800,
+        "battle_value": 850,
         "_comment": "105+99+105+109+107  )*0.95",
         "random_factor": 0.2,
+        "opponents": [],
+        "win_count": 0,
+        "lose_count": 0,
+        "swiss_score": 0
+    },
+    "team_16": {
+        "name": "mibr",
+        "seed": 16,
+        "battle_value": 850,
+        "_comment": "105+99+105+109+107  )*0.95",
+        "random_factor": 0.15,
         "opponents": [],
         "win_count": 0,
         "lose_count": 0,
