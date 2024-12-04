@@ -1,5 +1,8 @@
 import random
 import json
+import multiprocessing
+from functools import partial
+
 
 # Load the initial team data from a JSON file
 with open("teams.json", "r", encoding="utf-8") as f:
@@ -127,18 +130,68 @@ def run_tournament():
             statistics[team]["0-3"] += 1
         elif win_count < 3 and lose_count == 3:
             statistics[team]["1_or_2-3"] += 1
-        
 
-# Simulate 10 tournaments
-simulate_time = 1000000
-for _ in range(simulate_time):
-    reset_teams()
-    run_tournament()
 
-# Print statistics
-for team, stats in statistics.items():
-    prob30 = stats["3-0"] / simulate_time * 100
-    prob31or32 = stats["3-1_or_2"] / simulate_time * 100
-    prob03 = stats["0-3"] / simulate_time * 100
-    prob13or23 = stats["1_or_2-3"] / simulate_time * 100
-    print(f"{teams[team]["name"]}: \n3-0: {prob30:.2f}%, 3-1/2: {prob31or32:.2f}%, 0-3: {prob03:.2f}%, 1/2-3: {prob13or23:.2f}%")
+
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, as_completed
+
+# Load the initial team data from a JSON file
+with open("teams.json", "r", encoding="utf-8") as f:
+    teams = json.load(f)
+
+statistics = {team: {"3-0": 0, "3-1_or_2": 0, "0-3": 0, "1_or_2-3": 0} for team in teams}
+
+# Functions as in the original code, unchanged (e.g., reset_teams, match, matchmatch, swiss_round, etc.)
+
+def simulate_tournament_chunk(chunk_size):
+    """Simulate a chunk of tournaments and return partial statistics."""
+    local_statistics = {team: {"3-0": 0, "3-1_or_2": 0, "0-3": 0, "1_or_2-3": 0} for team in teams}
+    for _ in range(chunk_size):
+        reset_teams()
+        run_tournament()
+        for team in teams:
+            win_count = teams[team]["win_count"]
+            lose_count = teams[team]["lose_count"]
+            if win_count == 3 and lose_count == 0:
+                local_statistics[team]["3-0"] += 1
+            elif win_count == 3 and lose_count > 0:
+                local_statistics[team]["3-1_or_2"] += 1
+            elif win_count == 0 and lose_count == 3:
+                local_statistics[team]["0-3"] += 1
+            elif win_count < 3 and lose_count == 3:
+                local_statistics[team]["1_or_2-3"] += 1
+    return local_statistics
+
+def merge_statistics(global_stats, partial_stats):
+    """Merge partial statistics into the global statistics."""
+    for team, stats in partial_stats.items():
+        for key in stats:
+            global_stats[team][key] += stats[key]
+
+# Main simulation with ProcessPoolExecutor
+def main():
+    simulate_time = 100000000
+    total_chunks = 640  # Number of chunks to process
+    chunk_size = simulate_time // total_chunks  # Divide work into x chunks
+
+    completed_chunks = 0
+
+    with ProcessPoolExecutor() as executor:
+        futures = [executor.submit(simulate_tournament_chunk, chunk_size) for _ in range(total_chunks)]
+        for future in as_completed(futures):  # Track completion of each chunk
+            partial_stats = future.result()
+            merge_statistics(statistics, partial_stats)
+            completed_chunks += 1
+            print(f"Progress: {completed_chunks}/{total_chunks} chunks completed ({(completed_chunks / total_chunks) * 100:.2f}%).")
+
+    # Print statistics
+    for team, stats in statistics.items():
+        prob30 = stats["3-0"] / simulate_time * 100
+        prob31or32 = stats["3-1_or_2"] / simulate_time * 100
+        prob03 = stats["0-3"] / simulate_time * 100
+        prob13or23 = stats["1_or_2-3"] / simulate_time * 100
+        print(f"{teams[team]['name']}: \n3-0: {prob30:.2f}%, 3-1/2: {prob31or32:.2f}%, 0-3: {prob03:.2f}%, 1/2-3: {prob13or23:.2f}%")
+
+if __name__ == "__main__":
+    main()
